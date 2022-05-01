@@ -1,7 +1,8 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { wrapper } from '../redux/app/store';
+import { ChakraProvider } from '@chakra-ui/react'
+const App = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
+export default wrapper.withRedux(App);
