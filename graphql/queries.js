@@ -43,3 +43,64 @@ export const getProperties = async (page, pageSize) => {
 
   return result.properties;
 };
+
+export const getSingleProperty = async (slug) => {
+  const query = gql`
+    query getSingleProperty($slug: String!) {
+      properties(filters: { slug: { eq: $slug } }) {
+        data {
+          attributes {
+            name
+            price
+            beds
+            rooms
+            price
+            bathrooms
+            type
+            area
+            address
+            sale
+            createdAt
+            updatedAt
+            description
+            display
+            cover {
+              data {
+                attributes {
+                  url
+                  size
+                }
+              }
+            }
+            agent {
+              data {
+                attributes {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { slug });
+  return result.properties;
+};
+
+export const getPropertyPath = async () => {
+  const query = gql`
+    query getPropertyPath {
+      properties {
+        data {
+          attributes {
+            slug
+          }
+        }
+      }
+    }
+  `;
+  const reslut = await request(graphqlAPI, query);
+  return reslut.properties;
+};
