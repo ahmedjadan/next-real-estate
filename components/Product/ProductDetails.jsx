@@ -22,6 +22,7 @@ export default function ProductDetails({
     price,
     createdAt,
     updatedAt,
+    description,
   },
 }) {
   return (
@@ -65,18 +66,26 @@ export default function ProductDetails({
           </div>
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
-          <div className="col-span-2 space-x-4 flex items-center  p-4 rounded">
-            <div className="flex flex-col">
-              <p>Published: {dayjs(createdAt).format('d MMM, YYYY')}</p>
-              <p> Updated: {dayjs(updatedAt).format('dd, MM, YYYY')}</p>
+          <div className="col-span-2">
+            <div className=" space-x-4 flex flex items-center  p-4 rounded">
+              <div className="flex flex-col">
+                <p>Published: {dayjs(createdAt).format('d MMM, YYYY')}</p>
+                <p> Updated: {dayjs(updatedAt).format('dd, MM, YYYY')}</p>
+              </div>
+              <div className="flex-1 bg-gray-50">
+                <ProductInfo
+                  baths={bathrooms}
+                  area={area}
+                  rooms={rooms}
+                  beds={beds}
+                />
+              </div>
             </div>
-            <div className="flex-1 bg-gray-50">
-              <ProductInfo
-                baths={bathrooms}
-                area={area}
-                rooms={rooms}
-                beds={beds}
-              />
+            <div>
+              <h2 className="text-xl my-4 text-gray-700 font-semibold">
+                Description
+              </h2>
+              <p>{description}</p>
             </div>
           </div>
           <div className="bg-indigo-100 p-2">
