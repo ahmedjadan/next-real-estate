@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { navigation } from './data';
 import Link from 'next/link';
-
+import { BsFillTelephoneFill } from 'react-icons/bs';
 function Navigation() {
   const router = useRouter();
   const [navActive, setNavActive] = useState(false);
@@ -28,11 +28,11 @@ function Navigation() {
             : ''
         } z-20 px-2  mx-auto  md:px-4 md:flex md:space-x-4 `}
       >
-        <div className="max-w-7xl flex justify-between items-center h-full md:w-full  mx-auto">
+        <div className="max-w-6xl flex justify-between items-center h-full md:w-full  mx-auto">
           <div className="flex w-full md:w-auto h-full justify-between ">
             <Link href="/">
               <a
-                className={` duration-200 flex items-center ${
+                className={` duration-200 flex items-center font-bold text-2xl text-indigo-600 ${
                   navActive ? ' ' : ''
                 } `}
               >
@@ -44,7 +44,7 @@ function Navigation() {
                 alt="شعار النخبة"
                 className="w-[100px] md:w-[200px]"
               /> */}
-                Logo
+                Real <span className="text-gray-700">Estate</span>
               </a>
             </Link>
 
@@ -93,13 +93,13 @@ function Navigation() {
               {navigation.map((item, idx) => (
                 <Link href={`${item.href}`} passHref key={idx}>
                   <a
-                    onClick={() => setState(!state)}
+                    //onClick={() => setState(!state)}
                     className={`flex text-gray-700 hover:text-indigo-600 dark:text-gray-100 lg:px-4 px-2    ${
                       router.pathname === item.href ||
                       router.asPath === item.path
                         ? ' !text-indigo-600  font-semibold duration-150 '
                         : ''
-                    } text-sm ${navActive ? 'text-lg' : 'text-xl'}`}
+                    }  ${navActive ? 'text-xl' : 'text-xl'}`}
                   >
                     {item.name}
                   </a>
@@ -107,7 +107,11 @@ function Navigation() {
               ))}
             </li>
           </ul>
-          <div className="hidden md:flex">+2012987652</div>
+          <div className="hidden md:flex items-center">
+            {' '}
+            <BsFillTelephoneFill className="mr-1 text-indigo-600 "/>
+            <p className="font-semibold  text-gray-800">+2012987652</p>
+          </div>
         </div>
       </nav>
     </header>

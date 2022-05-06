@@ -11,25 +11,41 @@ export default function ProductInfo({
   beds,
   rooms,
   baths,
- 
+  large,
 }) {
   return (
     <div>
-      <div className=" w-full  flex items-center justify-between px-2 py-4">
+      <div className="flex items-center justify-between px-2 py-4">
         <div className="flex items-center justify-center flex-col">
-          <GiBathtub className="text-gray-600 lg:text-xl text-base " />
+          <GiBathtub
+            className={`text-gray-600 ${
+              large ? 'lg:text-3xl' : 'lg:text-xl'
+            } text-lg `}
+          />
           <p className="  text-gray-500 rounded">{baths} Baths</p>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <GiPersonInBed className="text-gray-600 lg:text-xl text-lg " />
+          <GiPersonInBed
+            className={`text-gray-600 ${
+              large ? 'lg:text-3xl' : 'lg:text-xl'
+            } text-lg `}
+          />
           <p className=" text-gray-500 rounded">{beds} Beds</p>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <MdOutlineBedroomChild className="text-gray-600 lg:text-xl text-lg " />
+          <MdOutlineBedroomChild
+            className={`text-gray-600 ${
+              large ? 'lg:text-3xl' : 'lg:text-xl'
+            } text-lg `}
+          />
           <p className=" text-gray-500 rounded">{rooms} Rooms</p>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <BiArea className="text-gray-600 lg:text-xl text-lg " />
+          <BiArea
+            className={`text-gray-600 ${
+              large ? 'lg:text-3xl' : 'lg:text-xl'
+            } text-lg `}
+          />
           <p className=" text-gray-500 rounded">{area} Area</p>
         </div>
       </div>

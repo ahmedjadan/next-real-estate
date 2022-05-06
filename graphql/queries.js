@@ -72,10 +72,26 @@ export const getSingleProperty = async (slug) => {
                 }
               }
             }
+            features {
+              data {
+                attributes {
+                  name
+                }
+              }
+            }
             agent {
               data {
                 attributes {
                   name
+                  phone
+                  bio
+                  avatar{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
                 }
               }
             }

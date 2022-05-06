@@ -1,16 +1,19 @@
 import millify from 'millify';
 import dayjs from 'dayjs'; // ES 2015
+import TimeAgo from 'react-timeago';
 
 import React from 'react';
 import ImageCard from '@components/Cards/ImageCard';
 import { getStrapiURL } from '@lib/api';
 import ProductInfo from '@components/Cards/ProductInfo';
 import { MdLocationOn } from 'react-icons/md';
+import Agent from '@components/Cards/Agent';
 export default function ProductDetails({
   attributes: {
     name,
     type,
     agent,
+    features,
     bathrooms,
     cover,
     images,
@@ -25,6 +28,7 @@ export default function ProductDetails({
     description,
   },
 }) {
+  console.log(agent);
   return (
     <>
       <div className="relative h-[30rem]">
@@ -67,30 +71,39 @@ export default function ProductDetails({
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
           <div className="col-span-2">
-            <div className=" space-x-4 flex flex items-center  p-4 rounded">
-              <div className="flex flex-col">
-                <p>Published: {dayjs(createdAt).format('d MMM, YYYY')}</p>
-                <p> Updated: {dayjs(updatedAt).format('dd, MM, YYYY')}</p>
+            <div className=" flex flex-col md:flex-row md:space-x-4 w-full md:items-center   rounded">
+              <div className="flex flex-col justify-center h-full ">
+                <span>
+                  Updated: <TimeAgo date={updatedAt} className="text-gray-400" />
+                </span>
+                <p >Published: <span className="text-gray-400">{dayjs(createdAt).format('dd, MM, YYYY')}</span></p>
               </div>
-              <div className="flex-1 bg-gray-50">
+              <div className="flex-1 bg-gray-100/90 px-4">
                 <ProductInfo
                   baths={bathrooms}
                   area={area}
                   rooms={rooms}
                   beds={beds}
+                  large
                 />
               </div>
             </div>
             <div>
               <h2 className="text-xl my-4 text-gray-700 font-semibold">
-                Description
+                Description:
               </h2>
               <p>{description}</p>
             </div>
+            <div>
+              <h2 className="text-xl my-4 text-gray-700 font-semibold">
+                Features:
+              </h2>
+              {features?.data?.map((feature, idx) => (
+                <p key={idx}> {feature.attributes.name} </p>
+              ))}
+            </div>
           </div>
-          <div className="bg-indigo-100 p-2">
-            <h1>{agent.data.attributes.name}</h1>
-          </div>
+          <Agent {...agent} />
         </div>
       </div>
     </>

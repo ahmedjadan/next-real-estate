@@ -18,7 +18,7 @@ export default function property({ property, related }) {
     <Layout>
       <ProductDetails {...property} />
       <div className=" max-w-6xl mx-auto ">
-        <h2 className="text-xl my-4 text-gray-700 font-semibold ">
+        <h2 className="text-xl my-4 px-4 md:px-2 lg:px-0 text-gray-700 font-semibold ">
           Related Properties
         </h2>
         <div className="grid max-w-6xl mx-auto  px-4 md:px-1 grid-cols-1 md:grid-cols-3 sm:grid-cols-2  gap-4">
