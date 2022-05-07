@@ -20,7 +20,7 @@ export default function FeatureList() {
           icon={<MdVilla />}
           bg="bg-rose-300/30 text-rose-500 "
           link
-        />
+        /> 
         <Feature
           title="Find Your Property Advisor"
           subTitle=" find homes/apartments to buy / sell in just minutes."

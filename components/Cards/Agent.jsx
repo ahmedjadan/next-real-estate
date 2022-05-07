@@ -29,13 +29,13 @@ export default function Agent({
         <Button
           text="Call"
           href="#_"
-          styles="bg-indigo-400 hover:bg-indigo-500 text-gray-50 hover:text-white"
+          styles="bg-indigo-400 hover:bg-indigo-500 w-full text-gray-50 hover:text-white"
           icon={<BsFillTelephoneFill />}
         />
         <Button
           text="whatsApp"
           href="https://api.whatsapp.com/send?phone=+12234556778&text=helo"
-          styles="bg-green-500 hover:bg-green-600 text-green-50 hover:text-white"
+          styles="bg-green-500 hover:bg-green-600 w-full text-green-50 hover:text-white"
           icon={<FaWhatsapp />}
         />
       </div>

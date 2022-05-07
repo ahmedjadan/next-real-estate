@@ -1,3 +1,4 @@
+import Banner from '@components/Banner/Banner';
 import ProductCard from '@components/Cards/ProductCard';
 import FeatureList from '@components/Features/FeatureList';
 import Product from '@components/Product/Product';
@@ -10,6 +11,7 @@ export default function Home({ properties }) {
 
   return (
     <Layout>
+      <Banner/>
       <FeatureList />
       <Product properties={properties} />
     </Layout>
