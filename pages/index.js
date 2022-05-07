@@ -1,4 +1,5 @@
 import ProductCard from '@components/Cards/ProductCard';
+import FeatureList from '@components/Features/FeatureList';
 import Product from '@components/Product/Product';
 import { getProperties } from '@graphql/queries';
 import Layout from '@layout/Layout';
@@ -9,6 +10,7 @@ export default function Home({ properties }) {
 
   return (
     <Layout>
+      <FeatureList />
       <Product properties={properties} />
     </Layout>
   );

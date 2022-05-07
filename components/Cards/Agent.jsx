@@ -1,9 +1,8 @@
-import Button from '@components/Button/Button';
-import { getStrapiURL } from '@lib/api';
-import React from 'react';
-import ImageCard from './ImageCard';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FaWhatsapp } from 'react-icons/fa';
+import { getStrapiURL } from '@lib/api';
+import ImageCard from './ImageCard';
+import Button from '@components/Button/Button';
 
 export default function Agent({
   data: {
@@ -22,7 +21,7 @@ export default function Agent({
         />
         <h1 className=" font-semibold text-gray-600">{name}</h1>
       </div>
-      <div className="bg-gray-200 rounded my-2 p-4 text-gray-600">
+      <div className="bg-gray-200/60 rounded my-2 p-4 text-gray-600">
         <h1>{phone}</h1>
         <p>{bio}</p>
       </div>
