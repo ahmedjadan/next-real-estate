@@ -12,20 +12,20 @@ export default function FeatureList() {
           subTitle=" find homes/apartments to buy / sell in just minutes."
           icon={<FaHome />}
           bg="bg-indigo-300/30 text-indigo-500"
-          link
+          link="#_"
         />
         <Feature
           title="Rent Villa / Apartment"
           subTitle=" find homes/apartments to buy / sell in just minutes."
           icon={<MdVilla />}
           bg="bg-rose-300/30 text-rose-500 "
-          link
-        /> 
+          link="#_"
+        />
         <Feature
           title="Find Your Property Advisor"
           subTitle=" find homes/apartments to buy / sell in just minutes."
           icon={<SiHomeadvisor />}
-          link
+          link="#_"
           bg="bg-gray-300/30 text-gray-500"
         />
       </div>

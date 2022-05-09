@@ -22,7 +22,7 @@ function Navigation() {
   return (
     <header className="">
       <nav
-        className={`fixed h-24 w-full container z-20 inset-x-0  items-center${
+        className={`fixed h-20 w-full container z-20 inset-x-0  items-center${
           navActive
             ? '  h-12 bg-white duration-300 shadow-sm dark:shadow-xl'
             : ''

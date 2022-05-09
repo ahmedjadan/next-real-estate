@@ -7,17 +7,22 @@ import {
 } from '@graphql/queries';
 import Layout from '@layout/Layout';
 export default function property({ property, related }) {
-  const currentProperty = property.attributes.type;
+  const currentProperty = property.attributes;
   const relatedProperty = related
     ?.map((property, i) => property)
-    .filter((p) => p.attributes.type === currentProperty)
+    .filter(
+      (p) =>
+        p.attributes.type === currentProperty.type &&
+        p.attributes.sale === currentProperty.sale &&
+        currentProperty.slug !== p.attributes.slug
+    )
     .slice(0, 2);
 
- 
+  //better to create custom query for related properties with pagination
   return (
     <Layout>
       <ProductDetails {...property} />
-      <div className=" max-w-6xl mx-auto ">
+      <div className=" max-w-6xl mx-auto my-6 md:my-16">
         <h2 className="text-xl my-4 px-4 md:px-2 lg:px-0 text-gray-700 font-semibold ">
           Related Properties
         </h2>

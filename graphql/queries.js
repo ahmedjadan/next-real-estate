@@ -58,6 +58,7 @@ export const getSingleProperty = async (slug) => {
             bathrooms
             type
             area
+            slug
             address
             sale
             createdAt
@@ -85,9 +86,9 @@ export const getSingleProperty = async (slug) => {
                   name
                   phone
                   bio
-                  avatar{
-                    data{
-                      attributes{
+                  avatar {
+                    data {
+                      attributes {
                         url
                       }
                     }
@@ -119,4 +120,44 @@ export const getPropertyPath = async () => {
   `;
   const reslut = await request(graphqlAPI, query);
   return reslut.properties;
+};
+
+export const getPropertySearch = async (type, price, purpose) => {
+  const query = gql`
+    query getPropertySearch($type: String!, $price: String, $purpose: String!) {
+      properties(
+        filters: {
+          type: { contains: $type }
+          price: { contains: $price }
+          sale: { contains: $purpose }
+        }
+      ) {
+        data {
+          attributes {
+            name
+            price
+            beds
+            rooms
+            price
+            bathrooms
+            type
+            area
+            sale
+            slug
+            display
+            cover {
+              data {
+                attributes {
+                  url
+                  size
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { type, price, purpose });
+  return result.properties;
 };

@@ -1,12 +1,12 @@
-
-export default function Button({ icon, text, href, styles }) {
+export default function Button({ icon, text, href, styles, onClick }) {
   return (
     <a
+      onClick={onClick}
       href={href}
-      className={`inline-flex items-center h-full justify-between  px-6 py-3 ${styles}  rounded-md`}
+      className={`inline-flex items-center h-full cursor-pointer justify-between  px-2 space-x-4 py-3 ${styles}  rounded-md`}
     >
       <span className={`mr-2 `}>{text}</span>
-      <span>{icon}</span>
+      <span className="text-xl">{icon}</span>
     </a>
   );
 }
