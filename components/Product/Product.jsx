@@ -1,5 +1,4 @@
 import ProductCard from '@components/Cards/ProductCard';
-import React from 'react';
 
 export default function Product({ properties }) {
   return (

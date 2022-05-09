@@ -14,39 +14,47 @@ export default function ProductInfo({
   large,
 }) {
   return (
-    <div>
-      <div className="flex items-center justify-between px-2 py-4">
-        <div className="flex items-center justify-center flex-col">
-          <GiBathtub
-            className={`text-gray-600 ${
-              large ? 'lg:text-3xl' : 'lg:text-xl'
-            } text-lg `}
-          />
-          <p className="  text-gray-500 rounded">{baths} Baths</p>
+    <div className="flex items-center justify-between w-full py-2 px-2">
+      <div className="inline-flex items-center shrink-0 ">
+        <BiArea
+          className={`text-indigo-700 ${
+            large ? 'lg:text-2xl' : 'lg:text-xl'
+          } text-xl `}
+        />
+
+        <div className="ml-3 mt-1.5 sm:mt-0">
+          <dt className="text-gray-500">
+            {area} <sub>m</sub>{' '}
+          </dt>
+
+          <dd className="font-medium">Area (m)</dd>
         </div>
-        <div className="flex items-center justify-center flex-col">
-          <GiPersonInBed
-            className={`text-gray-600 ${
-              large ? 'lg:text-3xl' : 'lg:text-xl'
-            } text-lg `}
-          />
-          <p className=" text-gray-500 rounded">{beds} Beds</p>
+      </div>
+      <div className="inline-flex items-center shrink-0">
+        <GiPersonInBed
+          className={`text-indigo-700 ${
+            large ? 'lg:text-2xl' : 'lg:text-xl'
+          }   text-xl`}
+        />
+
+        <div className="ml-3 mt-1.5 sm:mt-0">
+          <dt className="text-gray-500">Rooms </dt>
+
+          <dd className="font-medium"> {rooms} Rooms</dd>
         </div>
-        <div className="flex items-center justify-center flex-col">
-          <MdOutlineBedroomChild
-            className={`text-gray-600 ${
-              large ? 'lg:text-3xl' : 'lg:text-xl'
-            } text-lg `}
-          />
-          <p className=" text-gray-500 rounded">{rooms} Rooms</p>
-        </div>
-        <div className="flex items-center justify-center flex-col">
-          <BiArea
-            className={`text-gray-600 ${
-              large ? 'lg:text-3xl' : 'lg:text-xl'
-            } text-lg `}
-          />
-          <p className=" text-gray-500 rounded">{area} Area</p>
+      </div>
+
+      <div className="inline-flex items-center shrink-0 ">
+        <GiBathtub
+          className={`text-indigo-700 ${
+            large ? 'lg:text-2xl' : 'lg:text-xl'
+          }   text-xl`}
+        />
+
+        <div className="ml-3 mt-1.5 sm:mt-0">
+          <dt className="text-gray-500">Bathrooms</dt>
+
+          <dd className="font-medium">{baths} Rooms</dd>
         </div>
       </div>
     </div>
