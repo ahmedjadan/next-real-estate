@@ -18,17 +18,17 @@ export default function SearchInput({ properties }) {
     router.push(`/search?purpose=${purpose}&type=${type}&price=${price}`);
   };
   return (
-    <div className=" mx-auto w-full py-2 px-4 rounded-t bg-white">
-      <h2 className="font-semibold text-lg text-gray-600 my-1">
+    <div className=" mx-auto w-full py-2 px-2 rounded bg-gray-50">
+      {/* <h2 className="font-semibold text-lg text-gray-600 my-1">
         Search Properties
-      </h2>
+      </h2> */}
       <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0">
         <div className="flex-1 w-full flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
           <input
             onChange={(e) => setPurpose(e.target.value.toLowerCase())}
             type="text"
             placeholder="rent/sale"
-            className=" py-3 flex-1 rounded bg-gray-100 px-2 w-full"
+            className=" py-2 md:py-3 flex-1 rounded bg-gray-100 px-2 w-full"
           />
 
           <input
@@ -40,7 +40,7 @@ export default function SearchInput({ properties }) {
             }
             type="text"
             placeholder="house/villa/apartment"
-            className=" py-3 flex-1 rounded bg-gray-100 px-2 w-full"
+            className=" py-2 md:py-3 flex-1 rounded bg-gray-100 px-2 w-full"
           />
 
           {/* <select value={type} onChange={(e) => setType(e.target.value)}>
@@ -57,7 +57,7 @@ export default function SearchInput({ properties }) {
             onChange={(e) => setPrice(e.target.value)}
             type="text"
             placeholder="price"
-            className=" py-3 flex-1 rounded bg-gray-100 px-2 w-full"
+            className=" py-2 md:py-3 flex-1 rounded bg-gray-100 px-2 w-full"
           />
         </div>
         <Button

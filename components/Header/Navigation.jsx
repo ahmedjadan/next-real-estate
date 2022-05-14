@@ -99,7 +99,7 @@ function Navigation() {
                       router.asPath === item.path
                         ? ' !text-indigo-600  font-semibold duration-150 '
                         : ''
-                    }  ${navActive ? 'text-xl' : 'text-xl'}`}
+                    }  ${navActive ? 'text-lg' : 'text-lg'}`}
                   >
                     {item.name}
                   </a>
@@ -109,7 +109,7 @@ function Navigation() {
           </ul>
           <div className="hidden md:flex items-center">
             {' '}
-            <BsFillTelephoneFill className="mr-1 text-indigo-600 "/>
+            <BsFillTelephoneFill className="mr-1 text-indigo-600 " />
             <p className="font-semibold  text-gray-800">+2012987652</p>
           </div>
         </div>

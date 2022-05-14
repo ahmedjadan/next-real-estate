@@ -18,7 +18,7 @@ export default function Banner({properties}) {
             styles=" rounded"
           />
         </div>
-        <div className="absolute bottom-0  max-w-3xl inset-x-0 mx-auto  px-4 ">
+        <div className="absolute bottom-2  max-w-3xl inset-x-0 mx-auto  px-4 ">
           <SearchInput properties={properties}/>
         </div>
       </div>
