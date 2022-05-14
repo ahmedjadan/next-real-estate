@@ -36,15 +36,38 @@ export default function property({ property, related }) {
   );
 }
 
-export async function getStaticPaths() {
-  const propertyPath = await getPropertyPath();
-  const paths = propertyPath?.data?.map((property) => ({
+/* export async function getStaticPaths() {
+  const ArticlesPath = await getArticlesPath();
+  const paths = ArticlesPath?.data.map((article) => ({
     params: {
-      slug: property?.attributes?.slug || null
+      slug: article.attributes.slug || null,
     },
   }));
 
-  return { paths, fallback: true };
+  return {
+    paths,
+    fallback: true,
+  };
+}  */
+
+export async function getStaticPaths() {
+  const propertyPath = await getPropertyPath();
+  // const paths = propertyPath?.data?.map((property) => ({
+  //   params: {
+  //     slug: property?.attributes?.slug || null //slug || null,
+  //   },
+  // }));
+  const paths = propertyPath?.data.map((property) => ({
+    params: {
+      slug: property.attributes.slug || null,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+  //data[0] || null
 }
 export async function getStaticProps({ params }) {
   const page = 1;
