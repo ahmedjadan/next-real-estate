@@ -14,9 +14,9 @@ export default function SearchInput() {
   };
   return (
     <div className=" mx-auto w-full py-2 px-4 rounded-t bg-white">
-     <h2 className="font-semibold text-lg text-gray-600 my-1">
-     Search Properties
-     </h2>
+      <h2 className="font-semibold text-lg text-gray-600 my-1">
+        Search Properties
+      </h2>
       <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0">
         <div className="flex-1 w-full flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
           <input

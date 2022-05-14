@@ -28,12 +28,12 @@ export default function ProductDetails({
     description,
   },
 }) {
-  console.log(agent);
+  //console.log(agent);
   return (
     <>
       <div className="relative h-[30rem]">
         <ImageCard
-          src={getStrapiURL(cover.data.attributes.url)}
+          src={cover.data.attributes.url}
           layout="fill"
           objectFit="cover"
           objectPosition="50% 60%"
@@ -95,7 +95,7 @@ export default function ProductDetails({
               <p>{description}</p>
             </div>
             <div>
-              <h2 className="text-xl my-4 text-gray-700 font-semibold">
+              <h2 className="text-xl px-4 lg:px-0 my-4 text-gray-700 font-semibold">
                 Features:
               </h2>
               {features?.data?.map((feature, idx) => (

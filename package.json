@@ -9,12 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.8",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@reduxjs/toolkit": "^1.8.1",
     "dayjs": "^1.11.1",
-    "framer-motion": "^6",
     "graphql": "^16.4.0",
     "graphql-request": "^4.2.0",
     "millify": "^4.0.0",

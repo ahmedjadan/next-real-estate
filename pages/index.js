@@ -7,7 +7,7 @@ import Layout from '@layout/Layout';
 import Navigation from '../components/Header/Navigation';
 
 export default function Home({ properties }) {
-  console.log('Home ~ properties', properties);
+  //console.log('Home ~ properties', properties);
 
   return (
     <Layout>

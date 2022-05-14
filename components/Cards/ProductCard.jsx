@@ -27,7 +27,7 @@ export default function PCard({
         <a className="block  rounded-lg shadow-sm shadow-indigo-100">
           <div className="relative h-64 w-full">
             <ImageCard
-              src={getStrapiURL(cover.data.attributes.url)}
+              src={cover.data.attributes.url}
               layout="fill"
               alt={name}
               objectFit="cover"
@@ -55,7 +55,7 @@ export default function PCard({
               </div>
             </dl>
             <div className="absolute left-0 top-4 w-full  flex items-center justify-between px-2">
-              <p className="bg-green-100/80 px-3 text-green-600 rounded">
+              <p className="bg-gray-100/90 px-3 text-gray-700 rounded ">
                 {display}
               </p>
               <div className="flex itmes-center space-x-2">

@@ -64,11 +64,10 @@ export default function search({ properties }) {
     ],
     fetchers
   );
-  console.log('data', data?.properties?.data);
   return (
     <Layout>
       <div className="max-w-6xl mx-auto">
-        <div className="mt-4 mb-2 ">
+        <div className="mt-4 px-4">
           <h1 className="font-semibold text-2xl text-gray-700">
             Search Results Found {data?.properties?.data.length}{' '}
           </h1>
@@ -83,14 +82,14 @@ export default function search({ properties }) {
   );
 }
 
-export async function getServerSideProps({ query }) {
-  const { purpose, type, price } = query;
-  console.log(type);
-  const page = 1;
-  const pageSize = 20;
-  const property = await getPropertySearch(type, price, purpose);
+// export async function getServerSideProps({ query }) {
+//   const { purpose, type, price } = query;
+//   console.log(type);
+//   const page = 1;
+//   const pageSize = 20;
+//   const property = await getPropertySearch(type, price, purpose);
 
-  return {
-    props: { properties: property.data },
-  };
-}
+//   return {
+//     props: { properties: property.data },
+//   };
+// }
