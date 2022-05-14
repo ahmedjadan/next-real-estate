@@ -13,7 +13,7 @@ export default function Agent({
     <div className="tween border h-fit p-1 rounded sticky top-16">
       <div className="flex p-4 items-center justify-between w-full ">
         <ImageCard
-          src={avatar.data.attributes.url}
+          src={avatar?.data?.attributes.url}
           width={59}
           height={59}
           objectFit="cover"

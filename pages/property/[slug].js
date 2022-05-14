@@ -7,14 +7,14 @@ import {
 } from '@graphql/queries';
 import Layout from '@layout/Layout';
 export default function property({ property, related }) {
-  const currentProperty = property.attributes;
+  const currentProperty = property?.attributes;
   const relatedProperty = related
     ?.map((property, i) => property)
     .filter(
       (p) =>
-        p.attributes.type === currentProperty.type &&
-        p.attributes.sale === currentProperty.sale &&
-        currentProperty.slug !== p.attributes.slug
+        p?.attributes?.type === currentProperty?.type &&
+        p?.attributes?.sale === currentProperty?.sale &&
+        currentProperty?.slug !== p.attributes?.slug
     )
     .slice(0, 2);
 
@@ -27,7 +27,7 @@ export default function property({ property, related }) {
           Related Properties
         </h2>
         <div className="grid max-w-6xl mx-auto  px-4 md:px-1 grid-cols-1 md:grid-cols-3 sm:grid-cols-2  gap-4">
-          {relatedProperty.map((property, idx) => (
+          {relatedProperty?.map((property, idx) => (
             <ProductCard {...property} key={idx} />
           ))}
         </div>
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
   const propertyPath = await getPropertyPath();
   const paths = propertyPath?.data?.map((property) => ({
     params: {
-      slug: property.attributes.slug,
+      slug: property?.attributes?.slug || null
     },
   }));
 
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      property: property.data[0] || null,
+      property: property?.data[0] || null,
       related: related?.data,
     },
   };
