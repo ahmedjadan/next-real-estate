@@ -21,7 +21,8 @@ export default function property({ property, related }) {
   //better to create custom query for related properties with pagination
   return (
     <Layout>
-      <ProductDetails {...property} />
+      {property && <ProductDetails {...property} />}
+
       <div className=" max-w-6xl mx-auto my-6 md:my-16">
         <h2 className="text-xl my-4 px-4 md:px-2 lg:px-0 text-gray-700 font-semibold ">
           Related Properties
@@ -59,13 +60,14 @@ export async function getStaticPaths() {
   // }));
   const paths = propertyPath?.data.map((property) => ({
     params: {
-      slug: property.attributes.slug || null,
+      slug: property?.attributes.slug || null,
     },
   }));
+  console.log('paths ~ paths', paths);
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
   //data[0] || null
 }
