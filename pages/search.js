@@ -2,22 +2,23 @@ import Layout from '@layout/Layout';
 import useSWR from 'swr';
 import request from 'graphql-request';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { getPropertySearch } from '@graphql/queries';
 import ProductCard from '@components/Cards/ProductCard';
 
-const fetchers = (query, variables) =>
-  request('https://real-estate-next-app.herokuapp.com/graphql', query, variables);
-export default function Search({ properties }) {
-  //console.log('search ~ properties', properties);
+const fetcher = (query, variables) => {
+  return request(
+    `https://real-estate-next-app.herokuapp.com/graphql`,
+    query,
+    variables
+  );
+};
+export default function Search() {
   const router = useRouter();
   const { query } = router;
   const { purpose, type, price } = query;
   const variables = { purpose, type, price };
 
-  const [searchData, setSearchData] = useState([]);
-  //console.log('search ~ searchData', searchData);
 
   const { data, error } = useSWR(
     [
@@ -62,7 +63,7 @@ export default function Search({ properties }) {
       `,
       variables,
     ],
-    fetchers
+    fetcher
   );
   return (
     <Layout>
@@ -81,15 +82,3 @@ export default function Search({ properties }) {
     </Layout>
   );
 }
-
-// export async function getServerSideProps({ query }) {
-//   const { purpose, type, price } = query;
-//   console.log(type);
-//   const page = 1;
-//   const pageSize = 20;
-//   const property = await getPropertySearch(type, price, purpose);
-
-//   return {
-//     props: { properties: property.data },
-//   };
-// }

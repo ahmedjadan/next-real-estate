@@ -9,7 +9,7 @@ export default function Home({ properties }) {
 
   return (
     <Layout>
-      <Banner/>
+      <Banner properties={properties} />
       <FeatureList />
       <Product properties={properties} />
     </Layout>

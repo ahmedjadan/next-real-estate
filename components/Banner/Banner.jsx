@@ -4,7 +4,7 @@ import bannerImage from 'public/images/banner.jpg';
 
 import SearchInput from './SearchInput';
 
-export default function Banner() {
+export default function Banner({properties}) {
   return (
     <div className="max-w-7xl mx-auto ">
       <div className=" relative">
@@ -19,7 +19,7 @@ export default function Banner() {
           />
         </div>
         <div className="absolute bottom-0  max-w-3xl inset-x-0 mx-auto  px-4 ">
-          <SearchInput/>
+          <SearchInput properties={properties}/>
         </div>
       </div>
     </div>
