@@ -8,7 +8,7 @@ export default function Properties({ property }) {
   const { query } = router;
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto mt-16 mb-4">
+      <div className="max-w-6xl mx-auto mt-16 mb-4 px-4">
         <h1 className="font-semibold text-2xl text-gray-700">
           {' '}
           Properties for {query.type}{' '}

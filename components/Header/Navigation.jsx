@@ -86,7 +86,7 @@ function Navigation() {
           </div>
           <ul
             className={`shadow-md  mt-20  absolute right-0 z-20 top-0  w-1/2 sm:shadow-none md:block sm:border-0  sm:mt-0 md:static md:w-auto ${
-              state ? 'p-6 bg-white w-full' : 'hidden '
+              state ? 'p-6 bg-white duration-150  h-screen w-full' : 'hidden '
             }`}
           >
             <li className=" order-1 justify-between sm:flex md:justify-end items-center space-y-4  sm:space-y-0">
@@ -94,7 +94,7 @@ function Navigation() {
                 <Link href={`${item.href}`} passHref key={idx}>
                   <a
                     //onClick={() => setState(!state)}
-                    className={`flex text-gray-700 hover:text-indigo-600 dark:text-gray-100 lg:px-4 px-2    ${
+                    className={`flex text-gray-700 hover:text-indigo-600  lg:px-4 px-2    ${
                       router.pathname === item.href ||
                       router.asPath === item.path
                         ? ' !text-indigo-600  font-semibold duration-150 '
