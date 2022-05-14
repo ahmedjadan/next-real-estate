@@ -113,6 +113,7 @@ export const getPropertyPath = async () => {
         data {
           attributes {
             slug
+            sale
           }
         }
       }
@@ -159,5 +160,43 @@ export const getPropertySearch = async (type, price, purpose) => {
     }
   `;
   const result = await request(graphqlAPI, query, { type, price, purpose });
+  return result.properties;
+};
+
+export const getPropertiesType = async (type) => {
+  const query = gql`
+    query getPropertySearch($type: String!) {
+      properties(filters: { sale: { contains: $type } }) {
+        data {
+          attributes {
+            name
+            price
+            beds
+            rooms
+            price
+            bathrooms
+            type
+            area
+            address
+            sale
+            slug
+            createdAt
+            updatedAt
+            description
+            display
+            cover {
+              data {
+                attributes {
+                  url
+                  size
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { type });
   return result.properties;
 };

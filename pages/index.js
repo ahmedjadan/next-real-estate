@@ -1,11 +1,11 @@
 import Banner from '@components/Banner/Banner';
 import FeatureList from '@components/Features/FeatureList';
 import Product from '@components/Product/Product';
-import { getProperties } from '@graphql/queries';
+import { getProperties, getPropertiesType } from '@graphql/queries';
 import Layout from '@layout/Layout';
 
-export default function Home({ properties }) {
-  //console.log('Home ~ properties', properties);
+export default function Home({ properties, propertiesType }) {
+  console.log('Home ~ propertiesType', propertiesType);
 
   return (
     <Layout>
@@ -16,12 +16,13 @@ export default function Home({ properties }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
+  const propertyType = await getPropertiesType('sale');
   const page = 1;
   const pageSize = 20;
   const property = await getProperties(page, pageSize);
 
   return {
-    props: { properties: property?.data },
+    props: { properties: property?.data, propertiesType: propertyType?.data },
   };
 }

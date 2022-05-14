@@ -19,7 +19,6 @@ export default function Search() {
   const { purpose, type, price } = query;
   const variables = { purpose, type, price };
 
-
   const { data, error } = useSWR(
     [
       `
@@ -65,6 +64,15 @@ export default function Search() {
     ],
     fetcher
   );
+  if (!data)
+    return (
+      <Layout>
+        {' '}
+        <div className="text-indigo-500 animate-bounce font-semibold text-xl max-w-5xl mx-auto text-center">
+          loading...
+        </div>{' '}
+      </Layout>
+    );
   return (
     <Layout>
       <div className="max-w-6xl mx-auto">
