@@ -8,8 +8,8 @@ import { getPropertySearch } from '@graphql/queries';
 import ProductCard from '@components/Cards/ProductCard';
 
 const fetchers = (query, variables) =>
-  request('http://localhost:1337/graphql', query, variables);
-export default function search({ properties }) {
+  request('https://real-estate-next-app.herokuapp.com/graphql', query, variables);
+export default function Search({ properties }) {
   //console.log('search ~ properties', properties);
   const router = useRouter();
   const { query } = router;
